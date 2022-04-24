@@ -581,7 +581,7 @@ contract Comet is CometCore {
         );
 
         for (uint8 i = 0; i < numAssets; i++) {
-            if (isInAsset(assetsIn, i)) {
+            if (!isInAsset(assetsIn, i)) {
                 if (liquidity >= 0) {
                     return false;
                 }
