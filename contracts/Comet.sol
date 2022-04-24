@@ -852,7 +852,7 @@ contract Comet is CometCore {
      * @dev Supply either collateral or base asset, depending on the asset, if operator is allowed
      */
     function supplyInternal(address operator, address from, address dst, address asset, uint amount) internal {
-        if (isSupplyPaused()) revert Paused();
+        // if (isSupplyPaused()) revert Paused();
         if (!hasPermission(from, operator)) revert Unauthorized();
 
         if (asset == baseToken) {
