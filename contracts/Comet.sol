@@ -1004,7 +1004,7 @@ contract Comet is CometCore {
         updateBaseBalance(dst, dstUser, principalValue(dstBalance));
 
         if (srcBalance < 0) {
-            if (uint104(-srcBalance) < baseBorrowMin) revert BorrowTooSmall();
+            if (uint104(srcBalance) < baseBorrowMin) revert BorrowTooSmall();
             if (!isBorrowCollateralized(src)) revert NotCollateralized();
         }
 
