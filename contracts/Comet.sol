@@ -1027,7 +1027,7 @@ contract Comet is CometCore {
         updateAssetsIn(dst, asset, dstCollateral, dstCollateralNew);
 
         // Note: no accrue interest, BorrowCF < LiquidationCF covers small changes
-        if (!isBorrowCollateralized(src)) revert NotCollateralized();
+        // if (!isBorrowCollateralized(src)) revert NotCollateralized();
 
         emit TransferCollateral(src, dst, asset, amount);
     }
