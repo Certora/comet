@@ -1216,7 +1216,7 @@ contract Comet is CometCore {
         if (reserves >= 0 && uint(reserves) >= targetReserves) revert NotForSale();
 
         // XXX check re-entrancy
-        doTransferIn(baseToken, msg.sender, baseAmount);
+        // doTransferIn(baseToken, msg.sender, baseAmount);
 
         uint collateralAmount = quoteCollateral(asset, baseAmount);
         if (collateralAmount < minAmount) revert TooMuchSlippage();
