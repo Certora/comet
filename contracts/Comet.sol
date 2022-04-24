@@ -756,7 +756,7 @@ contract Comet is CometCore {
      * @dev Whether user has a non-zero balance of an asset, given assetsIn flags
      */
     function isInAsset(uint16 assetsIn, uint8 assetOffset) internal pure returns (bool) {
-        return (assetsIn & (uint16(1) << assetOffset) != 0);
+        return (assetsIn & (uint8(1) << assetOffset) != 0);
     }
 
     /**
