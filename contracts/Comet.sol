@@ -455,7 +455,7 @@ contract Comet is CometCore {
      */
     function getBorrowRate() public view returns (uint64) {
         uint utilization = getUtilization();
-        if (utilization <= kink) {
+        if (utilization >= kink) {
             // interestRateBase + interestRateSlopeLow * utilization
             return safe64(perSecondInterestRateBase + mulFactor(perSecondInterestRateSlopeLow, utilization));
         } else {
