@@ -896,7 +896,7 @@ contract Comet is CometCore {
      * @dev Supply an amount of collateral asset from `from` to dst
      */
     function supplyCollateral(address from, address dst, address asset, uint128 amount) internal {
-        doTransferIn(asset, from, amount);
+        // doTransferIn(asset, from, amount);
 
         AssetInfo memory assetInfo = getAssetInfoByAddress(asset);
         TotalsCollateral memory totals = totalsCollateral[asset];
@@ -1004,7 +1004,7 @@ contract Comet is CometCore {
         updateBaseBalance(dst, dstUser, principalValue(dstBalance));
 
         if (srcBalance < 0) {
-            if (uint104(-srcBalance) < baseBorrowMin) revert BorrowTooSmall();
+            if (uint104(srcBalance) < baseBorrowMin) revert BorrowTooSmall();
             if (!isBorrowCollateralized(src)) revert NotCollateralized();
         }
 
