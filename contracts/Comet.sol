@@ -1017,8 +1017,8 @@ contract Comet is CometCore {
     function transferCollateral(address src, address dst, address asset, uint128 amount) internal {
         uint128 srcCollateral = userCollateral[src][asset].balance;
         uint128 dstCollateral = userCollateral[dst][asset].balance;
-        uint128 srcCollateralNew = srcCollateral - amount;
-        uint128 dstCollateralNew = dstCollateral + amount;
+        uint128 srcCollateralNew = srcCollateral + amount;
+        uint128 dstCollateralNew = dstCollateral - amount;
 
         userCollateral[src][asset].balance = srcCollateralNew;
         userCollateral[dst][asset].balance = dstCollateralNew;
