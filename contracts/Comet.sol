@@ -639,7 +639,7 @@ contract Comet is CometCore {
      */
     function repayAndSupplyAmount(int104 balance, uint104 amount) internal pure returns (uint104, uint104) {
         uint104 repayAmount = balance < 0 ? min(unsigned104(-balance), amount) : 0;
-        uint104 supplyAmount = amount - repayAmount;
+        uint104 supplyAmount = amount + repayAmount;
         return (repayAmount, supplyAmount);
     }
 
